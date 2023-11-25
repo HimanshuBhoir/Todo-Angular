@@ -3,5 +3,5 @@
 <div *ngIf="this.todos.length === 0; else elseBlock">No Todos to display</div>
 <ng-template #elseBlock>Content to render when conditionis false</ng-template>
 <div *ngFor="let todo of todos">
-    <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)"></app-todo-item>
+    <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)" (todoCheckBox)="checkTodo($event)"></app-todo-item>
 </div>

@@ -1,6 +1,10 @@
-
-{{todo.sno}}
-{{todo.title}}
-{{todo.desc}}
-{{todo.active}}
-<button class="deleteTodo" (click)="onClick(todo)">Delete</button>
+<div class="todo-item">
+    <h3 class="todo-title" [ngClass]="{'strike':!todo.active}">{{ todo.title }}</h3>
+    <p class="todo-description" [ngClass]="{'strike':!todo.active}">{{ todo.desc }}</p>
+    <label class="checkbox-container">
+      <input type="checkbox" (click)="onCheckBoxClick(todo)" [checked]="!todo.active">
+      <span class="checkmark"></span>
+    </label>
+    <button class="delete-todo-btn" (click)="onClick(todo)">Delete</button>
+  </div>
+  

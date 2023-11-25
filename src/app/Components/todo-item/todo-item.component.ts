@@ -12,9 +12,16 @@ import { Todo } from '../../TODO';
 export class TodoItemComponent {
   @Input() todo: Todo = new Todo;
   @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
+  @Output() todoCheckBox: EventEmitter<Todo> = new EventEmitter();
 
   onClick(todo: Todo){
     this.todoDelete.emit(todo)
     console.log('delete item')
+  }
+
+  onCheckBoxClick(todo: Todo){
+    // console.log(todo)
+    this.todoCheckBox.emit(todo);
+    // console.log(todo)
   }
 }
